@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 	vector<Service*> services = {&r, &s, &v};
 	for (Service* service : services) {
 		service->info();
-		cout << "\n\n\n\n" << endl;
+		cout << "\n" << endl;
 	}
 	return 0;
 }

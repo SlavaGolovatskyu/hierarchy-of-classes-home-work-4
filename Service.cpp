@@ -25,6 +25,7 @@ public:
 	virtual void info() {
 		cout << "Service: " << service << endl;
 		cout << "Price: " << price << "$" << endl;
+		cout << "class Service" << endl;
 	}
 };
 

@@ -23,6 +23,7 @@ public:
 		cout << "Service: " << get_service() << endl;
 		cout << "Price: " << get_price() << "$" << endl;
 		cout << "Type inspection: " << get_type_inspection() << endl;
+		cout << "class Inspection" << endl;
 		cout << endl;
     }
 };
