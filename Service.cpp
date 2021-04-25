@@ -1,24 +1,31 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 
+#ifndef SERVICE_CPP
+#define SERVICE_CPP
+
 class Service {
 private:
 	string service;
+	int price;
 public:
-	Service() 
-		: service("None") { 
-		cout << "Default constructor class\'s \"Service\"\n\n"; 
+	Service(string Service, int price) 
+		: service(Service),
+		  price(price) { 
+		cout << "Constructor with params class\' \"Service\"\n\n"; 
 	}
-	Service(string Service) 
-		: service(Service) { 
-		cout << "Constructor with params class\'s \"Service\"\n\n"; 
+	virtual ~Service() {
+		cout << "Destructor class\' \"Service\"\n\n";
 	}
-	~Service() {
-		cout << "Destructor class\'s \"Service\"\n\n";
+	int get_price() { return price; }
+	string get_service() { return service; }
+	virtual void info() {
+		cout << "Class Service Service: " << service << endl;
+		cout << "Class Service Price: " << price << endl;
 	}
-	virtual string get_info() { return service; }
-	virtual void set_info(string service) { this->service = service; }
-	
 };
+
+#endif

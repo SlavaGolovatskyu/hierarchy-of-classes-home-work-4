@@ -1,0 +1,37 @@
+# Project: Project3
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o Service.o Repair.o Inspection.o
+LINKOBJ  = main.o Service.o Repair.o Inspection.o
+LIBS     = -L"E:/Dev-C++/Dev-Cpp/MinGW64/lib" -L"E:/Dev-C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"E:/Dev-C++/Dev-Cpp/MinGW64/include" -I"E:/Dev-C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Dev-C++/Dev-Cpp/MinGW64/include" -I"E:/Dev-C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev-C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project3.exe
+CXXFLAGS = $(CXXINCS) -pedantic -g3
+CFLAGS   = $(INCS) -pedantic -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Service.o: Service.cpp
+	$(CPP) -c Service.cpp -o Service.o $(CXXFLAGS)
+
+Repair.o: Repair.cpp
+	$(CPP) -c Repair.cpp -o Repair.o $(CXXFLAGS)
+
+Inspection.o: Inspection.cpp
+	$(CPP) -c Inspection.cpp -o Inspection.o $(CXXFLAGS)
