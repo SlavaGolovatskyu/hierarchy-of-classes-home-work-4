@@ -17,7 +17,7 @@ public:
 		  price(price) { 
 		cout << "Constructor with params class\' \"Service\"\n\n"; 
 	}
-	virtual ~Service() {
+	~Service() {
 		cout << "Destructor class\' \"Service\"\n\n";
 	}
 	int get_price() { return price; }
