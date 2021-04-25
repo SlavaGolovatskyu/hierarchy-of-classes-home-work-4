@@ -23,8 +23,8 @@ public:
 	int get_price() { return price; }
 	string get_service() { return service; }
 	virtual void info() {
-		cout << "Class Service Service: " << service << endl;
-		cout << "Class Service Price: " << price << endl;
+		cout << "Service: " << service << endl;
+		cout << "Price: " << price << "$" << endl;
 	}
 };
 

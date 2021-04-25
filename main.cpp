@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Service.cpp"
 #include "Repair.cpp"
 #include "Inspection.cpp"
@@ -8,9 +9,12 @@ using namespace std;
 
 int main(int argc, char** argv) {
 	Repair r("broke wheel", 500);
-	r.info();
-	cout << "\n\n\n" << endl;
 	Inspection s("All car", 299);
-	s.info();
+	Service v("other", 159);
+	vector<Service*> services = {&r, &s, &v};
+	for (Service* service : services) {
+		service->info();
+		cout << "\n\n\n\n" << endl;
+	}
 	return 0;
 }
